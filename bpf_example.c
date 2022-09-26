@@ -103,7 +103,8 @@ static int test_sock(void)
 	memset(&bpfa, 0, sizeof(bpfa));
 	//bpfa.prog_type = BPF_PROG_TYPE_SOCKET_FILTER;
 	//bpfa.prog_type = BPF_PROG_TYPE_KPROBE;
-	bpfa.prog_type = BPF_PROG_TYPE_TRACEPOINT;
+	bpfa.prog_type = BPF_PROG_TYPE_TRACEPOINT; // this is not in the man page. Saw in a blog.
+	// in this blog: http://terenceli.github.io/技术/2020/01/18/ebpf-in-c
 	
 	bpfa.insn_cnt   = insns_cnt;
 	bpfa.insns = (__u64)prog;
